@@ -1,80 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("✅ Message sent successfully!");
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   return (
     <div style={styles.bg}>
       <div style={styles.overlay}>
-        <div style={styles.container}>
+        <div style={styles.card}>
           <h1 style={styles.heading}>Contact Me</h1>
 
-          {/* Contact Info */}
-          <div style={styles.info}>
-            <p><strong>Email:</strong> rajputavinash889977@gmail.com</p>
-            <p><strong>Phone:</strong> 7905282999</p>
-            <p><strong>Location:</strong> Azamgarh, India</p>
+          <p style={styles.text}>
+            Have a project in mind or want to work together?  
+            Feel free to reach out — I’d love to connect! 😊
+          </p>
+
+          <div style={styles.infoBox}>
+            <p><strong>📍 Location:</strong> Azamgarh, India</p>
+            <p><strong>📧 Email:</strong> avinash@example.com</p>
+            <p><strong>📞 Phone:</strong> +91 XXXXXXXXXX</p>
           </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} style={styles.form}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              style={styles.input}
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              style={styles.input}
-            />
-
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="4"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              style={styles.textarea}
-            />
-
-            <button type="submit" style={styles.button}>
-              Send Message
-            </button>
-          </form>
-
-          {/* Social Links */}
           <div style={styles.social}>
-            <a href="#" style={styles.link}>GitHub</a>
-            <a href="#" style={styles.link}>LinkedIn</a>
-            <a href="#" style={styles.link}>Instagram</a>
+            <a
+              href="https://www.instagram.com/aurawith__avi"
+              target="_blank"
+              rel="noreferrer"
+              style={styles.insta}
+            >
+              📸 Instagram
+            </a>
+
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noreferrer"
+              style={styles.github}
+            >
+              💻 GitHub
+            </a>
           </div>
 
-         
+          <p style={styles.quote}>
+            “Let’s build something amazing together.” 🚀
+          </p>
         </div>
       </div>
     </div>
@@ -85,89 +51,81 @@ const styles = {
   bg: {
     minHeight: "100vh",
     backgroundImage:
-      "url('https://images.unsplash.com/photo-1501785888041-af3ef285b470')",
+      "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d')",
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
 
   overlay: {
     minHeight: "100vh",
-    background: "rgba(0,0,0,0.6)",
+    background: "rgba(0,0,0,0.7)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     padding: "20px",
   },
 
-  container: {
+  card: {
     background: "rgba(255,255,255,0.95)",
-    padding: "35px",
+    padding: "40px",
     borderRadius: "18px",
+    maxWidth: "600px",
     width: "100%",
-    maxWidth: "420px",
     textAlign: "center",
-    animation: "fadeIn 1.2s ease-in-out",
-    boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+    boxShadow: "0 20px 45px rgba(0,0,0,0.45)",
     fontFamily: "Arial",
   },
 
   heading: {
+    fontSize: "34px",
     marginBottom: "15px",
-    fontSize: "28px",
   },
 
-  info: {
+  text: {
+    fontSize: "16px",
+    lineHeight: "1.7",
     marginBottom: "20px",
-    fontSize: "14px",
+    color: "#333",
   },
 
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "12px",
-  },
-
-  input: {
-    padding: "10px",
-    borderRadius: "8px",
-    border: "1px solid #ccc",
-    fontSize: "14px",
-  },
-
-  textarea: {
-    padding: "10px",
-    borderRadius: "8px",
-    border: "1px solid #ccc",
-    fontSize: "14px",
-  },
-
-  button: {
-    marginTop: "10px",
-    padding: "10px",
-    background: "#0d6efd",
-    color: "#fff",
-    border: "none",
-    borderRadius: "8px",
+  infoBox: {
+    textAlign: "left",
+    marginBottom: "25px",
     fontSize: "15px",
-    cursor: "pointer",
+    lineHeight: "1.8",
   },
 
   social: {
-    marginTop: "15px",
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "center",
+    gap: "15px",
+    marginBottom: "20px",
   },
 
-  link: {
+  insta: {
     textDecoration: "none",
-    color: "#0d6efd",
-    fontWeight: "bold",
+    background: "#E1306C",
+    color: "#fff",
+    padding: "10px 16px",
+    borderRadius: "8px",
+    fontWeight: "600",
   },
 
-  map: {
-    marginTop: "20px",
+  github: {
+    textDecoration: "none",
+    background: "#24292e",
+    color: "#fff",
+    padding: "10px 16px",
+    borderRadius: "8px",
+    fontWeight: "600",
+  },
+
+  quote: {
+    marginTop: "15px",
+    fontStyle: "italic",
+    color: "#0d6efd",
+    fontWeight: "600",
   },
 };
 
 export default Contact;
-
