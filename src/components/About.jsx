@@ -6,9 +6,7 @@ function About() {
       <h1 style={{}}>About Me:</h1>
 
       <p style={{marginLeft:"70px", width:"60%"}}>
-        Hello! Mera name <strong>Avinash Chauhan</strong> hai. 
-        Main ek passionate React.js developer hoon aur mujhe 
-        modern web applications banana pasand hai.
+       “My name is <strong>Avinash Chauhan</strong>. I am 20 years old and I am from <strong>Azamgarh</strong>. Currently, I am pursuing my graduation. I am a web developer with strong knowledge of front-end and back-end technologies. I have hands-on experience with React.js, JavaScript, HTML, CSS, Node.js, and Python. I enjoy building user-friendly web applications and continuously improving my technical skills. I am a quick learner, dedicated, and always eager to work on new challenges that help me grow as a developer.”
       </p>
 
       <p style={{marginLeft:"70px", width:"60%"}}>
