@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Form from './components/Form'
-import About from './components/About'
-
-
+import About from './components/Home'
+import Contact from './components/Contact'
+import Home from './components/Home'
 import { Routes, Route } from "react-router-dom";
 
 import Services from './components/Services'
@@ -15,10 +15,13 @@ function App() {
     <>
       
      <Navbar/>
-     <About/>
+     <Home/>
       <Routes>
       <Route path="/" element={<Form />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+        
     </Routes>
      
 
